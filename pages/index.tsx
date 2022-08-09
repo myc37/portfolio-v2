@@ -1,3 +1,4 @@
+import Navbar from "components/Navbar";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -10,7 +11,7 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>
-				<h1>landing page</h1>
+				<Navbar />
 			</main>
 		</div>
 	);
