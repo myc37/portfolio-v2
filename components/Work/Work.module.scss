@@ -27,8 +27,8 @@
 }
 
 .container {
-    flex-grow: 1;
     min-height: 100vh;
+    width: 100%;
     display: flex;
     column-gap: 4rem;
     align-items: center;
@@ -56,8 +56,6 @@
     font-weight: 500;
     cursor: pointer;
     transition: color 0.3s ease-in;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
 
     &:hover {
         color: var(--secondary-color)
@@ -78,14 +76,14 @@
     z-index: 1;
     border-radius: 99px; 
     transition: 0.3s ease-out;
-    left: 4.5rem;
+    left: 5.5rem;
 }
 
 .content {
     text-align: justify;
     background: inherit;
     color: #fff;
-    width: 35%;
+    width: 40%;
     height: calc(50vh + 2rem);
     padding-left: 2rem;
     font-size: 1.25rem;

@@ -61,3 +61,12 @@ h6 {
 main {
 	display: flex;
 }
+
+.sections {
+	position: absolute;
+	top: 0;
+	left: 6rem;
+	width: calc(100% - 6rem);
+	display: flex;
+	flex-direction: column;
+}

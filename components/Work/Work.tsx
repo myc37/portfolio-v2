@@ -130,7 +130,7 @@ const workExperiences: WorkExperience[] = [
 		end: "Aug 2022",
 	},
 	{
-		company: "Skylab V2",
+		company: "Skylab",
 		role: "Full Stack Developer",
 		blurb: "Skylab is the web platform used for the Orbital program, which is NUS School of Computing's self-driven programming summer experience",
 		achievements: [
