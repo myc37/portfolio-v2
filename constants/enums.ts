@@ -20,14 +20,22 @@ export enum THEME {
 
 export enum TECH {
 	ALGOLIA = "Algolia",
+	CSHARP = "C#",
 	CHAKRA = "Chakra",
+	CYPRESS = "Cypress",
 	EXPRESS = "Express",
+	FIGMA = "Figma",
 	FIREBASE = "Firebase",
-	MATERIAL = "Material",
+	GCP = "GCP",
+	JAVASCRIPT = "Javascript",
+	JIRA = "Jira",
+	MUI = "MUI",
 	NEXTJS = "Next.js",
 	POSTGRESQL = "Postgresql",
 	PRISMA = "Prisma",
 	REACT = "React",
 	TAILWIND = "Tailwind",
+	TYPESCRIPT = "Typescript",
+	UNITY = "Unity",
 	WEBSITE = "Website",
 }
