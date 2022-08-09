@@ -1,0 +1,109 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15rem;
+}
+
+.card {
+    width: 40%;
+    position: relative;
+    display: flex;
+    margin-right: 22.5%;
+}
+
+.card.mirror {
+    margin-right: 0;
+    margin-left: 22.5%;
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    cursor: pointer;
+
+    &:hover>img {
+        transform: scale(1.05);
+    }
+    &:hover>.overlay {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+.imageContainer>img {
+    overflow: hidden;
+    border-radius: 1rem;
+    transition: all 1s ease;
+    border-radius: 0.25rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    border-radius: 0.25rem;
+    background-color: rgba(0, 0, 0, 0);
+    column-gap: 12.5%;
+
+    * {
+        visibility: hidden;
+    }
+    &:hover {
+        * {
+            visibility: visible;
+            transform: scale(1.03);
+        }
+    }
+}
+
+.descriptor {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    left: 95%;
+    top: 25%;
+    width: 60%;
+    z-index: 2;
+}
+
+.descriptor.mirror {
+    left: -55%;
+}
+
+.header {
+    font-size: 2rem;
+    align-self: flex-end;
+    color: white
+}
+
+.stack {
+    display: flex;
+    column-gap: 1.5rem;
+    align-self: flex-end;
+}
+
+.header.mirror,.stack.mirror {
+    align-self: flex-start;
+}
+
+.blurb {
+    background-color: var(--secondary-color);
+    border-radius: 0.25rem;
+    padding: 2rem;
+    text-align: justify;
+    font-weight: 500;
+    color: var(--primary-color);
+}
