@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+:root {
+	--primary-color: #2d3142;
+	--secondary-color: #e6af2e;
+}
+
 *,
 *::before,
 *::after {
@@ -51,4 +56,8 @@ h6 {
 #root,
 #__next {
 	isolation: isolate;
+}
+
+main {
+	display: flex;
 }
