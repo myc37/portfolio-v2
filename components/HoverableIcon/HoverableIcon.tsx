@@ -3,6 +3,7 @@ import { IconContext } from "react-icons";
 import {
 	SiAlgolia,
 	SiChakraui,
+	SiChartdotjs,
 	SiCsharp,
 	SiCypress,
 	SiExpress,
@@ -75,6 +76,8 @@ const getIcon = (name: SOCIAL | SECTION | TECH | THEME): JSX.Element => {
 			return <SiCsharp />;
 		case TECH.CHAKRA:
 			return <SiChakraui />;
+		case TECH.CHARTJS:
+			return <SiChartdotjs />;
 		case TECH.CYPRESS:
 			return <SiCypress />;
 		case TECH.EXPRESS:
