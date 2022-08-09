@@ -22,6 +22,7 @@ export enum TECH {
 	ALGOLIA = "Algolia",
 	CSHARP = "C#",
 	CHAKRA = "Chakra",
+	CHARTJS = "Chart.js",
 	CYPRESS = "Cypress",
 	EXPRESS = "Express",
 	FIGMA = "Figma",
