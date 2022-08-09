@@ -3,14 +3,22 @@ import { IconContext } from "react-icons";
 import {
 	SiAlgolia,
 	SiChakraui,
+	SiCsharp,
+	SiCypress,
 	SiExpress,
+	SiFigma,
 	SiFirebase,
+	SiGooglecloud,
+	SiJavascript,
+	SiJira,
 	SiMaterialui,
 	SiNextdotjs,
 	SiPostgresql,
 	SiPrisma,
 	SiReact,
 	SiTailwindcss,
+	SiTypescript,
+	SiUnity,
 } from "react-icons/si";
 import {
 	FaGithub,
@@ -61,50 +69,66 @@ const HoverableIcon: FC<Props> = ({ name, large, active, onClick }) => {
 
 const getIcon = (name: SOCIAL | SECTION | TECH | THEME): JSX.Element => {
 	switch (name) {
-		case "Algolia":
+		case TECH.ALGOLIA:
 			return <SiAlgolia />;
-		case "Chakra":
+		case TECH.CSHARP:
+			return <SiCsharp />;
+		case TECH.CHAKRA:
 			return <SiChakraui />;
-		case "Express":
+		case TECH.CYPRESS:
+			return <SiCypress />;
+		case TECH.EXPRESS:
 			return <SiExpress />;
-		case "Firebase":
+		case TECH.FIGMA:
+			return <SiFigma />;
+		case TECH.FIREBASE:
 			return <SiFirebase />;
-		case "Material":
+		case TECH.GCP:
+			return <SiGooglecloud />;
+		case TECH.JAVASCRIPT:
+			return <SiJavascript />;
+		case TECH.JIRA:
+			return <SiJira />;
+		case TECH.MUI:
 			return <SiMaterialui />;
-		case "Next.js":
+		case TECH.NEXTJS:
 			return <SiNextdotjs />;
-		case "Postgresql":
+		case TECH.POSTGRESQL:
 			return <SiPostgresql />;
-		case "Prisma":
+		case TECH.PRISMA:
 			return <SiPrisma />;
-		case "React":
+		case TECH.REACT:
 			return <SiReact />;
-		case "Tailwind":
+		case TECH.TAILWIND:
 			return <SiTailwindcss />;
-		case "Github":
-			return <FaGithub />;
-		case "Linkedin":
-			return <FaLinkedin />;
-		case "Resume":
-			return <FaFilePdf />;
-		case "Telegram":
-			return <FaTelegramPlane />;
-		case "Home":
-			return <MdHome />;
-		case "Work":
-			return <MdWork />;
-		case "Projects":
-			return <MdCode />;
-		case "Contact":
-			return <MdEmail />;
-		case "About":
-			return <MdPerson />;
-		case "Dark":
-			return <MdOutlineDarkMode />;
-		case "Light":
-			return <MdOutlineLightMode />;
-		case "Website":
+		case TECH.TYPESCRIPT:
+			return <SiTypescript />;
+		case TECH.UNITY:
+			return <SiUnity />;
+		case TECH.WEBSITE:
 			return <FiExternalLink />;
+		case SOCIAL.GITHUB:
+			return <FaGithub />;
+		case SOCIAL.LINKEDIN:
+			return <FaLinkedin />;
+		case SOCIAL.RESUME:
+			return <FaFilePdf />;
+		case SOCIAL.TELEGRAM:
+			return <FaTelegramPlane />;
+		case SECTION.HOME:
+			return <MdHome />;
+		case SECTION.WORK:
+			return <MdWork />;
+		case SECTION.PROJECTS:
+			return <MdCode />;
+		case SECTION.CONTACT:
+			return <MdEmail />;
+		case SECTION.ABOUT:
+			return <MdPerson />;
+		case THEME.DARK:
+			return <MdOutlineDarkMode />;
+		case THEME.LIGHT:
+			return <MdOutlineLightMode />;
 		default:
 			return <FaQuestionCircle />;
 	}
