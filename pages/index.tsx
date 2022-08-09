@@ -1,4 +1,5 @@
 import Navbar from "components/Navbar";
+import Work from "components/Work";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
 			</Head>
 			<main>
 				<Navbar />
+				<Work />
 			</main>
 		</div>
 	);

@@ -1,0 +1,153 @@
+.tabs>input[type="radio"] {
+    display: none;
+}
+
+.tabs>input[type="radio"] {
+    &:checked {
+        &+label {
+            color: var(--secondary-color);
+        }
+    }
+}
+
+.tabs>input[id="radio-1"] {
+    &:checked {
+        &~.glider {
+            transform: translateY(0);
+        }
+    }
+}
+
+.tabs>input[id="radio-2"] {
+    &:checked {
+        &~.glider {
+            transform: translateY(calc(100% + 2rem)); // increase by 100% for each subsequent radio
+        }
+    }
+}
+
+.container {
+    flex-grow: 1;
+    min-height: 100vh;
+    display: flex;
+    column-gap: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    position: relative;
+
+    * {
+        z-index: 2;
+    }
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    width: 2rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease-in;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+
+    &:hover {
+        color: var(--secondary-color)
+    }
+}
+
+.tabs>label {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.glider {
+    position: absolute;
+    display: flex;
+    height: 25vh;
+    width: 0.25rem;
+    background-color: var(--secondary-color);
+    z-index: 1;
+    border-radius: 99px; 
+    transition: 0.3s ease-out;
+    left: 4.5rem;
+}
+
+.content {
+    text-align: justify;
+    background: inherit;
+    color: #fff;
+    width: 35%;
+    height: calc(50vh + 2rem);
+    padding-left: 2rem;
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    ul {
+        list-style-type: none;
+        li {
+            font-size: 1.05rem;
+            font-weight: 300;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+
+            p {
+                width: 100%
+            }
+        }
+    }
+
+    h3 {
+        color: gray
+    }
+}
+
+.header {
+    font-weight: 700;
+    font-size: 2rem;
+    display: flex;
+    column-gap: 1rem;
+
+    h1:nth-of-type(2) {
+        color: var(--secondary-color)
+    }
+    h1 {
+        font-size: inherit;
+    }
+}
+
+
+.body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+
+.stack {
+    display: flex;
+    column-gap: 2rem;
+    align-self: flex-end;
+}
+
+.award {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+@media (max-width: 700px) {
+    .tabs {
+        transform: scale(0.6);
+    }
+}
