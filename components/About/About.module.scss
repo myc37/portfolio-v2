@@ -1,0 +1,19 @@
+.container {
+	// min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	row-gap: 4rem;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+	color: white;
+	line-height: 2;
+	font-size: 1.25rem;
+	text-align: justify;
+}
