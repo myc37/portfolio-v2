@@ -81,3 +81,29 @@ main {
 		width: 100%;
 	}
 }
+
+.header {
+	display: flex;
+	column-gap: 2rem;
+	align-items: center;
+	justify-content: center;
+	align-self: flex-start;
+	margin-top: 1rem;
+
+	h1 {
+		color: var(--secondary-color);
+	}
+}
+
+.custom-alert {
+	position: fixed;
+	bottom: 1rem;
+	left: 45%;
+	background-color: green;
+	border-radius: 99px;
+	padding: 0.5rem 1rem 0.5rem 1rem;
+	z-index: 4;
+	overflow: hidden;
+	text-align: center;
+	color: white;
+}
