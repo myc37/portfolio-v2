@@ -1,6 +1,5 @@
-import Footer from "components/Footer";
 import HoverableIcon from "components/HoverableIcon";
-import { SECTION, SIZE, SOCIAL } from "constants/enums";
+import { OTHER, SECTION, SIZE, SOCIAL } from "constants/enums";
 import React, { useEffect, useState } from "react";
 import contactStyles from "./Contact.module.scss";
 
@@ -65,13 +64,13 @@ const Contact = () => {
 };
 
 type ContactInfo = {
-	name: SOCIAL;
+	name: SOCIAL | OTHER;
 	value: string;
 };
 
 const contactInfos: ContactInfo[] = [
 	{
-		name: SOCIAL.EMAIL,
+		name: OTHER.EMAIL,
 		value: "nvjn37@gmail.com",
 	},
 	{

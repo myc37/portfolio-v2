@@ -3,7 +3,6 @@ export enum SOCIAL {
 	LINKEDIN = "Linkedin",
 	TELEGRAM = "Telegram",
 	RESUME = "Resume",
-	EMAIL = "Email",
 }
 
 export enum SECTION {
@@ -48,4 +47,5 @@ export enum SIZE {
 
 export enum OTHER {
 	WEBSITE = "Website",
+	EMAIL = "Email",
 }

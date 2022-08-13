@@ -59,15 +59,16 @@ const Navbar: FC<Props> = ({ sectionsInfo }) => {
 				))}
 			</div>
 			<div className={navStyles.socials}>
-				{Object.values(SOCIAL)
-					.filter((social) => social !== SOCIAL.EMAIL)
-					.map((social) => (
-						<HoverableIcon
-							key={social}
-							name={social}
-							size={SIZE.MEDIUM}
-						/>
-					))}
+				{Object.values(SOCIAL).map((social) => (
+					<a
+						key={social}
+						href={socialLinks[social]}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<HoverableIcon name={social} size={SIZE.MEDIUM} />
+					</a>
+				))}
 			</div>
 		</nav>
 	);
@@ -75,6 +76,13 @@ const Navbar: FC<Props> = ({ sectionsInfo }) => {
 
 const isInView = (section: HTMLDivElement) => {
 	return section.getBoundingClientRect().top <= window.innerHeight / 2;
+};
+
+const socialLinks: Record<SOCIAL, string> = {
+	Github: "https://github.com/myc37",
+	Linkedin: "https://www.linkedin.com/in/n-vijay-narayanan/",
+	Telegram: "https://t.me/myc37",
+	Resume: "/resumes/May_2022.pdf",
 };
 
 export default Navbar;
