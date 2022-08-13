@@ -1,0 +1,263 @@
+$clover: #a7c958;
+
+.container {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+.content {
+	z-index: 2;
+	position: absolute;
+	top: 35%;
+	left: 30%;
+	width: 40%;
+	color: white;
+	text-align: center;
+	font-size: 2rem;
+	line-height: 2;
+	display: flex;
+	flex-direction: column;
+	row-gap: 4rem;
+}
+
+.arrowContainer {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+
+	&:hover {
+		.arrow:nth-child(2) {
+			transform: translateY(20%);
+		}
+		.arrow:nth-child(3) {
+			transform: translateY(40%);
+		}
+	}
+}
+
+.arrow {
+	transition: transform 0.4s ease;
+}
+
+.arrow:nth-child(1) {
+	animation: blink-1 1.5s ease infinite;
+}
+
+.arrow:nth-child(2) {
+	animation: blink-2 1.5s ease infinite;
+}
+
+.arrow:nth-child(3) {
+	animation: blink-3 1.5s ease infinite;
+}
+
+.dropContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.dropContainer li {
+	position: absolute;
+	display: block;
+	list-style: none;
+	animation: fall 15s linear infinite;
+	top: -10rem;
+}
+
+.cloverSquare {
+	width: 50px;
+	height: 50px;
+	background-color: $clover;
+	position: relative;
+
+	.cloverLeaf {
+		width: 50%;
+		height: 50%;
+		border-radius: 100%;
+		background: inherit;
+		position: absolute;
+	}
+
+	.cloverStem {
+		background-color: inherit;
+		border-radius: 0px 0px 99px 0px;
+		width: 4%;
+		height: 50%;
+		position: absolute;
+		top: 100%;
+		left: 54%;
+		transform: rotate(-20deg);
+	}
+}
+
+.cloverLeaf:nth-child(1) {
+	left: -25%;
+}
+.cloverLeaf:nth-child(2) {
+	top: -25%;
+}
+.cloverLeaf:nth-child(3) {
+	right: -25%;
+}
+.cloverLeaf:nth-child(4) {
+	top: -25%;
+	right: 0;
+}
+.cloverLeaf:nth-child(5) {
+	left: -25%;
+	bottom: 0;
+}
+.cloverLeaf:nth-child(6) {
+	bottom: -25%;
+}
+.cloverLeaf:nth-child(7) {
+	right: -25%;
+	bottom: 0;
+}
+.cloverLeaf:nth-child(8) {
+	right: 0;
+	bottom: -25%;
+}
+
+.dropContainer li:nth-child(1) {
+	left: 25%;
+	animation-delay: 0s;
+
+	.cloverSquare {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+.dropContainer li:nth-child(2) {
+	left: 10%;
+	animation-delay: 2s;
+	animation-duration: 12s;
+
+	.cloverSquare {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.dropContainer li:nth-child(3) {
+	left: 70%;
+	animation-delay: 4s;
+
+	.cloverSquare {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.dropContainer li:nth-child(4) {
+	left: 40%;
+	animation-delay: 0s;
+	animation-duration: 18s;
+
+	.cloverSquare {
+		width: 30px;
+		height: 30px;
+	}
+}
+
+.dropContainer li:nth-child(5) {
+	left: 65%;
+	animation-delay: 0s;
+
+	.cloverSquare {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.dropContainer li:nth-child(6) {
+	left: 75%;
+	animation-delay: 3s;
+
+	.cloverSquare {
+		width: 35px;
+		height: 35px;
+	}
+}
+
+.dropContainer li:nth-child(7) {
+	left: 35%;
+	animation-delay: 7s;
+
+	.cloverSquare {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+.dropContainer li:nth-child(8) {
+	left: 50%;
+	animation-delay: 15s;
+	animation-duration: 45s;
+
+	.cloverSquare {
+		width: 25px;
+		height: 25px;
+	}
+}
+
+.dropContainer li:nth-child(9) {
+	left: 20%;
+	animation-delay: 2s;
+	animation-duration: 35s;
+
+	.cloverSquare {
+		width: 15px;
+		height: 15px;
+	}
+}
+
+.dropContainer li:nth-child(10) {
+	left: 85%;
+	animation-delay: 0s;
+	animation-duration: 11s;
+
+	.cloverSquare {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+@keyframes fall {
+	0% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateY(100vh) rotate(360deg);
+		opacity: 0;
+	}
+}
+
+@keyframes blink-1 {
+	20% {
+		color: $clover;
+	}
+}
+
+@keyframes blink-2 {
+	40% {
+		color: $clover;
+	}
+}
+
+@keyframes blink-3 {
+	60% {
+		color: $clover;
+	}
+}
