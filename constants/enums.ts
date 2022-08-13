@@ -3,6 +3,7 @@ export enum SOCIAL {
 	LINKEDIN = "Linkedin",
 	TELEGRAM = "Telegram",
 	RESUME = "Resume",
+	EMAIL = "Email",
 }
 
 export enum SECTION {
@@ -38,5 +39,13 @@ export enum TECH {
 	TAILWIND = "Tailwind",
 	TYPESCRIPT = "Typescript",
 	UNITY = "Unity",
+}
+
+export enum SIZE {
+	MEDIUM = "md",
+	LARGE = "lg",
+}
+
+export enum OTHER {
 	WEBSITE = "Website",
 }
