@@ -39,36 +39,56 @@ import {
 } from "react-icons/md";
 import { FiExternalLink } from "react-icons/fi";
 import iconStyles from "./HoverableIcon.module.scss";
-import { SECTION, SOCIAL, TECH, THEME } from "constants/enums";
+import { OTHER, SECTION, SIZE, SOCIAL, TECH, THEME } from "constants/enums";
 
 type Props = {
-	name: SOCIAL | SECTION | TECH | THEME;
-	large?: boolean;
+	name: SOCIAL | SECTION | TECH | THEME | OTHER;
+	size?: SIZE;
 	active?: boolean;
+	disableFloat?: boolean;
+	hideLabel?: boolean;
 	onClick?: MouseEventHandler<HTMLDivElement>;
 };
 
-const HoverableIcon: FC<Props> = ({ name, large, active, onClick }) => {
-	const largeStyle = large ? iconStyles.large : "";
+const HoverableIcon: FC<Props> = ({
+	name,
+	size,
+	active,
+	disableFloat,
+	hideLabel,
+	onClick,
+}) => {
+	const sizeStyle =
+		size === SIZE.MEDIUM
+			? iconStyles.medium
+			: size === SIZE.LARGE
+			? iconStyles.large
+			: "";
 	const activeStyle = active ? iconStyles.active : "";
+	const floatStyle = disableFloat ? iconStyles.grounded : iconStyles.float;
+	const styles = `${sizeStyle} ${activeStyle} ${floatStyle}`;
 
 	return (
 		<div onClick={onClick} className={iconStyles.container}>
 			<IconContext.Provider
 				value={{
-					className: `${iconStyles.icon} ${largeStyle} ${activeStyle}`,
+					className: `${iconStyles.icon} ${styles}`,
 				}}
 			>
 				{getIcon(name)}
 			</IconContext.Provider>
-			<h1 className={`${iconStyles.text} ${largeStyle} ${activeStyle}`}>
-				{name}
-			</h1>
+			{hideLabel ? (
+				<></>
+			) : (
+				<h1 className={`${iconStyles.text} ${styles}`}>{name}</h1>
+			)}
 		</div>
 	);
 };
 
-const getIcon = (name: SOCIAL | SECTION | TECH | THEME): JSX.Element => {
+const getIcon = (
+	name: SOCIAL | SECTION | TECH | THEME | OTHER
+): JSX.Element => {
 	switch (name) {
 		case TECH.ALGOLIA:
 			return <SiAlgolia />;
@@ -108,8 +128,6 @@ const getIcon = (name: SOCIAL | SECTION | TECH | THEME): JSX.Element => {
 			return <SiTypescript />;
 		case TECH.UNITY:
 			return <SiUnity />;
-		case TECH.WEBSITE:
-			return <FiExternalLink />;
 		case SOCIAL.GITHUB:
 			return <FaGithub />;
 		case SOCIAL.LINKEDIN:
@@ -125,6 +143,7 @@ const getIcon = (name: SOCIAL | SECTION | TECH | THEME): JSX.Element => {
 		case SECTION.PROJECTS:
 			return <MdCode />;
 		case SECTION.CONTACT:
+		case SOCIAL.EMAIL:
 			return <MdEmail />;
 		case SECTION.ABOUT:
 			return <MdPerson />;
@@ -132,6 +151,8 @@ const getIcon = (name: SOCIAL | SECTION | TECH | THEME): JSX.Element => {
 			return <MdOutlineDarkMode />;
 		case THEME.LIGHT:
 			return <MdOutlineLightMode />;
+		case OTHER.WEBSITE:
+			return <FiExternalLink />;
 		default:
 			return <FaQuestionCircle />;
 	}
