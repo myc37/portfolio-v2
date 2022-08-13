@@ -1,19 +1,31 @@
 /* eslint-disable @next/next/no-img-element */
 import HoverableIcon from "components/HoverableIcon";
-import { SOCIAL, TECH } from "constants/enums";
+import { OTHER, SECTION, SIZE, SOCIAL, TECH } from "constants/enums";
 import React, { FC } from "react";
 import projectStyles from "./Projects.module.scss";
 
 const Projects = () => {
 	return (
 		<div className={projectStyles.container}>
-			{projects.map((project, index) => (
-				<ProjectCard
-					key={project.name}
-					{...project}
-					mirror={Boolean(index % 2)}
+			<span className="header">
+				<HoverableIcon
+					name={SECTION.PROJECTS}
+					size={SIZE.LARGE}
+					active
+					hideLabel
+					disableFloat
 				/>
-			))}
+				<h1>Personal Projects</h1>
+			</span>
+			<div className={projectStyles.projectsContainer}>
+				{projects.map((project, index) => (
+					<ProjectCard
+						key={project.name}
+						{...project}
+						mirror={Boolean(index % 2)}
+					/>
+				))}
+			</div>
 		</div>
 	);
 };
@@ -28,27 +40,27 @@ type Project = {
 const projects: Project[] = [
 	{
 		name: "WookieLeaks",
-		blurb: "WookieLeaks is a fun website I made using data from swapi.dev. It has a Star Wars theme and contains all kinds of information about characters from the hit series. It even has a quiz for you to test how well you know your star wars characters!",
+		blurb: "WookieLeaks is a Star Wars-themed web page that contains all kinds of information about characters from the hit series. It even has a quiz for you to test how well you know your star wars characters!",
 		url: "https://wookie-leaks.vercel.app/",
 		stack: [TECH.NEXTJS, TECH.TAILWIND, TECH.PRISMA],
 	},
 	{
 		name: "partnerUp",
-		blurb: "PlanPal is a simple scheduler app that I made for myself to track all my classes, deadlines and other events so that I could view all my plans for each week in one glance. It helps me to be better organized and any University student can feel free to use it as well!",
+		blurb: "partnerUp provides a central platform for users browse posts and join exisiting groups which share their interests or create their own posts to find other like-minded individuals!",
 		url: "https://orbital-teamtams-partnerup.herokuapp.com/home",
 		stack: [TECH.REACT, TECH.MUI, TECH.FIREBASE, TECH.ALGOLIA],
 	},
 	{
-		name: "PlanPal",
-		blurb: "Having trouble finding a group for some competition, project or leisure activity that you are interested in? partnerUp provides a central platform for users browse posts and join exisiting groups which share their interests or create their own posts",
-		url: "https://my-planpal.herokuapp.com/",
-		stack: [TECH.REACT, TECH.CHAKRA, TECH.PRISMA, TECH.POSTGRESQL],
-	},
-	{
 		name: "financeMeister",
-		blurb: "FinanceMeister is a web application developed for people seeking to improve their financial health. Users can input their transactions and generate useful statistics daily, weekly or monthly period. It also features a kanban board for goal setting as well as a news section which displays recent finance-related articles.",
+		blurb: "FinanceMeister allows users to input their transactions and generate useful statistics daily, weekly or monthly period. It also features a kanban board for goal setting as well as a news section which displays recent finance-related articles.",
 		url: "https://financemeister.vercel.app/",
 		stack: [TECH.REACT, TECH.TAILWIND, TECH.CHARTJS, TECH.FIREBASE],
+	},
+	{
+		name: "PlanPal",
+		blurb: "PlanPal is a simple scheduler app that helps students to track all their classes, deadlines and other events in one single platform.",
+		url: "https://my-planpal.herokuapp.com/",
+		stack: [TECH.REACT, TECH.CHAKRA, TECH.PRISMA, TECH.POSTGRESQL],
 	},
 ];
 
@@ -67,7 +79,7 @@ const ProjectCard: FC<Project & { mirror: boolean }> = ({
 				<img src={`/images/${name.toLowerCase()}.jpg`} alt={name} />
 				<div className={projectStyles.overlay}>
 					<a href={url} target="_blank" rel="noopener noreferrer">
-						<HoverableIcon name={TECH.WEBSITE} />
+						<HoverableIcon name={OTHER.WEBSITE} />
 					</a>
 					<HoverableIcon name={SOCIAL.GITHUB} />
 				</div>
