@@ -1,3 +1,4 @@
+import Footer from "components/Footer";
 import HoverableIcon from "components/HoverableIcon";
 import { SECTION, SIZE, SOCIAL } from "constants/enums";
 import React, { useEffect, useState } from "react";
