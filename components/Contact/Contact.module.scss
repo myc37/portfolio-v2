@@ -15,7 +15,7 @@
 	row-gap: 2rem;
 
 	span {
-		color: white;
+		color: var(--light-color);
 		line-height: 2;
 		font-size: 1.25rem;
 		width: 100%;
@@ -34,7 +34,7 @@
 	column-gap: 3rem;
 
 	h3 {
-		color: white;
+		color: var(--light-color);
 		cursor: pointer;
 		transition: all 0.4s ease;
 

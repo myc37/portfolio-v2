@@ -78,10 +78,10 @@ const WorkDescriptor: FC<WorkExperience> = ({
 					<h1>{role}</h1>
 					<h1> @ {company}</h1>
 				</span>
-				<h3>
+				<h4>
 					{start}
 					{end ? ` - ${end}` : ""}
-				</h3>
+				</h4>
 			</div>
 			<div className={workStyles.body}>
 				<p>{blurb}</p>

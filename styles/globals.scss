@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600;8..144,700&display=swap");
 
 :root {
-	--primary-color: #2a3d45;
-	--secondary-color: #c4d6b0;
+	--primary-color: #073b3a;
+	--secondary-color: #6bbf59;
+	--light-color: #fefae0;
+	--sub-color: #638475;
 }
 
 *,
@@ -105,15 +107,15 @@ main {
 	z-index: 4;
 	overflow: hidden;
 	text-align: center;
-	color: white;
+	color: var(--light-color);
 }
 
 footer {
-	color: white;
+	color: var(--light-color);
 	padding: 1rem;
 	width: 100%;
-	font-size: 0.75rem;
-	color: var(--secondary-color);
+	font-size: 1rem;
+	color: var(--sub-color);
 	display: flex;
 	align-items: center;
 	justify-content: center;

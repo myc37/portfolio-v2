@@ -143,7 +143,7 @@ const getIcon = (
 		case SECTION.PROJECTS:
 			return <MdCode />;
 		case SECTION.CONTACT:
-		case SOCIAL.EMAIL:
+		case OTHER.EMAIL:
 			return <MdEmail />;
 		case SECTION.ABOUT:
 			return <MdPerson />;

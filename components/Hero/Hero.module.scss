@@ -12,7 +12,7 @@ $clover: #a7c958;
 	top: 35%;
 	left: 30%;
 	width: 40%;
-	color: white;
+	color: var(--light-color);
 	text-align: center;
 	font-size: 2rem;
 	line-height: 2;
@@ -75,7 +75,7 @@ $clover: #a7c958;
 .cloverSquare {
 	width: 50px;
 	height: 50px;
-	background-color: $clover;
+	background-color: var(--secondary-color);
 	position: relative;
 
 	.cloverLeaf {
@@ -234,7 +234,7 @@ $clover: #a7c958;
 
 .blinkingCursor::after {
 	content: "|";
-	color: $clover;
+	color: var(--secondary-color);
 }
 
 .blinkingCursor.inactive::after {
@@ -256,36 +256,36 @@ $clover: #a7c958;
 @keyframes blink-1 {
 	0%,
 	25% {
-		color: $clover;
+		color: var(--secondary-color);
 	}
 	26%,
 	100% {
-		color: white;
+		color: var(--light-color);
 	}
 }
 
 @keyframes blink-2 {
 	0%,
 	25% {
-		color: white;
+		color: var(--light-color);
 	}
 	26%,
 	50% {
-		color: $clover;
+		color: var(--secondary-color);
 	}
 	51%,
 	100% {
-		color: white;
+		color: var(--light-color);
 	}
 }
 
 @keyframes blink-3 {
 	0%,
 	50% {
-		color: white;
+		color: var(--light-color);
 	}
 	51%,
 	100% {
-		color: $clover;
+		color: var(--secondary-color);
 	}
 }
