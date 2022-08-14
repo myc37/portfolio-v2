@@ -1,21 +1,22 @@
+import FadeIn from "components/FadeIn";
 import HoverableIcon from "components/HoverableIcon";
 import { SECTION, SIZE, SOCIAL } from "constants/enums";
-import React, { FC, RefObject, useEffect, useState } from "react";
+import { FC, RefObject, useEffect, useState } from "react";
 import navStyles from "./Navbar.module.scss";
 
 type Props = {
-	sectionsInfo: Record<SECTION, RefObject<HTMLDivElement>>;
+	sectionRefs: Record<SECTION, RefObject<HTMLDivElement>>;
 };
 
-const Navbar: FC<Props> = ({ sectionsInfo }) => {
+const Navbar: FC<Props> = ({ sectionRefs }) => {
 	const [activeSectionId, setActiveSectionId] = useState(0);
 
 	useEffect(() => {
-		const homeSection = sectionsInfo.Home.current;
-		const aboutSection = sectionsInfo.About.current;
-		const workSection = sectionsInfo.Work.current;
-		const projectsSection = sectionsInfo.Projects.current;
-		const contactSection = sectionsInfo.Contact.current;
+		const homeSection = sectionRefs.Home.current;
+		const aboutSection = sectionRefs.About.current;
+		const workSection = sectionRefs.Work.current;
+		const projectsSection = sectionRefs.Projects.current;
+		const contactSection = sectionRefs.Contact.current;
 
 		if (
 			!homeSection ||
@@ -39,7 +40,7 @@ const Navbar: FC<Props> = ({ sectionsInfo }) => {
 				setActiveSectionId(0);
 			}
 		};
-	}, [sectionsInfo]);
+	}, [sectionRefs]);
 
 	const handleScroll = (ref: RefObject<HTMLDivElement>) => {
 		ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -47,29 +48,31 @@ const Navbar: FC<Props> = ({ sectionsInfo }) => {
 
 	return (
 		<nav className={navStyles.container}>
-			<div className={navStyles.tabs}>
-				{Object.values(SECTION).map((section, index) => (
-					<HoverableIcon
-						key={section}
-						name={section}
-						size={SIZE.LARGE}
-						active={index === activeSectionId}
-						onClick={() => handleScroll(sectionsInfo[section])}
-					/>
-				))}
-			</div>
-			<div className={navStyles.socials}>
-				{Object.values(SOCIAL).map((social) => (
-					<a
-						key={social}
-						href={socialLinks[social]}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<HoverableIcon name={social} size={SIZE.MEDIUM} />
-					</a>
-				))}
-			</div>
+			<FadeIn direction="left">
+				<div className={navStyles.tabs}>
+					{Object.values(SECTION).map((section, index) => (
+						<HoverableIcon
+							key={section}
+							name={section}
+							size={SIZE.LARGE}
+							active={index === activeSectionId}
+							onClick={() => handleScroll(sectionRefs[section])}
+						/>
+					))}
+				</div>
+				<div className={navStyles.socials}>
+					{Object.values(SOCIAL).map((social) => (
+						<a
+							key={social}
+							href={socialLinks[social]}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<HoverableIcon name={social} size={SIZE.MEDIUM} />
+						</a>
+					))}
+				</div>
+			</FadeIn>
 		</nav>
 	);
 };

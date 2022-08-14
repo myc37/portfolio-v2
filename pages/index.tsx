@@ -17,12 +17,20 @@ const Home: NextPage = () => {
 	const projectsRef = useRef<HTMLDivElement>(null);
 	const contactRef = useRef<HTMLDivElement>(null);
 
-	const sectionsInfo: Record<SECTION, RefObject<HTMLDivElement>> = {
+	const sectionRefs: Record<SECTION, RefObject<HTMLDivElement>> = {
 		Home: homeRef,
 		About: aboutRef,
 		Work: workRef,
 		Projects: projectsRef,
 		Contact: contactRef,
+	};
+
+	const sectionComponents: Record<SECTION, JSX.Element> = {
+		Home: <Hero aboutRef={sectionRefs.About} />,
+		About: <About />,
+		Work: <Work />,
+		Projects: <Projects />,
+		Contact: <Contact />,
 	};
 
 	return (
@@ -33,23 +41,13 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/icons/logo.svg" />
 			</Head>
 			<main>
-				<Navbar sectionsInfo={sectionsInfo} />
+				<Navbar sectionRefs={sectionRefs} />
 				<div className="sections">
-					<div ref={sectionsInfo.Home}>
-						<Hero aboutRef={sectionsInfo.About} />
-					</div>
-					<div ref={sectionsInfo.About}>
-						<About />
-					</div>
-					<div ref={sectionsInfo.Work}>
-						<Work />
-					</div>
-					<div ref={sectionsInfo.Projects}>
-						<Projects />
-					</div>
-					<div ref={sectionsInfo.Contact}>
-						<Contact />
-					</div>
+					{Object.values(SECTION).map((section) => (
+						<div key={section} ref={sectionRefs[section]}>
+							{sectionComponents[section]}
+						</div>
+					))}
 					<Footer />
 				</div>
 			</main>
