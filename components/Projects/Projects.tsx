@@ -1,31 +1,34 @@
 /* eslint-disable @next/next/no-img-element */
+import FadeIn from "components/FadeIn";
 import HoverableIcon from "components/HoverableIcon";
 import { OTHER, SECTION, SIZE, SOCIAL, TECH } from "constants/enums";
-import React, { FC } from "react";
+import { FC } from "react";
 import projectStyles from "./Projects.module.scss";
 
 const Projects = () => {
 	return (
 		<div className={projectStyles.container}>
-			<span className="header">
-				<HoverableIcon
-					name={SECTION.PROJECTS}
-					size={SIZE.LARGE}
-					active
-					hideLabel
-					disableFloat
-				/>
-				<h1>Personal Projects</h1>
-			</span>
-			<div className={projectStyles.projectsContainer}>
-				{projects.map((project, index) => (
-					<ProjectCard
-						key={project.name}
-						{...project}
-						mirror={Boolean(index % 2)}
+			<FadeIn>
+				<span className="header">
+					<HoverableIcon
+						name={SECTION.PROJECTS}
+						size={SIZE.LARGE}
+						active
+						hideLabel
+						disableFloat
 					/>
-				))}
-			</div>
+					<h1>Personal Projects</h1>
+				</span>
+				<div className={projectStyles.projectsContainer}>
+					{projects.map((project, index) => (
+						<ProjectCard
+							key={project.name}
+							{...project}
+							mirror={Boolean(index % 2)}
+						/>
+					))}
+				</div>
+			</FadeIn>
 		</div>
 	);
 };

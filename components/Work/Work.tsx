@@ -1,41 +1,44 @@
-import React, { ChangeEventHandler, FC } from "react";
+import { ChangeEventHandler, FC } from "react";
 import workStyles from "./Work.module.scss";
 import { useState } from "react";
 import { SECTION, SIZE, TECH } from "constants/enums";
 import HoverableIcon from "components/HoverableIcon";
 import { FaAward } from "react-icons/fa";
 import { IconContext } from "react-icons";
+import FadeIn from "components/FadeIn";
 
 const Work: FC = () => {
 	const [activeId, setActiveId] = useState(0);
 
 	return (
 		<div className={workStyles.container}>
-			<span className="header">
-				<HoverableIcon
-					name={SECTION.WORK}
-					size={SIZE.LARGE}
-					active
-					hideLabel
-					disableFloat
-				/>
-				<h1>Work Experiences</h1>
-			</span>
-			<div className={workStyles.workContainer}>
-				<div className={workStyles.tabs}>
-					{workExperiences.map((workExperience, index) => (
-						<WorkTab
-							key={workExperience.company}
-							inputId={`radio-${index + 1}`}
-							company={workExperience.company}
-							checked={index === activeId}
-							onChange={() => setActiveId(index)}
-						/>
-					))}
-					<span className={workStyles.glider}></span>
+			<FadeIn>
+				<span className="header">
+					<HoverableIcon
+						name={SECTION.WORK}
+						size={SIZE.LARGE}
+						active
+						hideLabel
+						disableFloat
+					/>
+					<h1>Work Experiences</h1>
+				</span>
+				<div className={workStyles.workContainer}>
+					<div className={workStyles.tabs}>
+						{workExperiences.map((workExperience, index) => (
+							<WorkTab
+								key={workExperience.company}
+								inputId={`radio-${index + 1}`}
+								company={workExperience.company}
+								checked={index === activeId}
+								onChange={() => setActiveId(index)}
+							/>
+						))}
+						<span className={workStyles.glider}></span>
+					</div>
+					<WorkDescriptor {...workExperiences[activeId]} />
 				</div>
-				<WorkDescriptor {...workExperiences[activeId]} />
-			</div>
+			</FadeIn>
 		</div>
 	);
 };
