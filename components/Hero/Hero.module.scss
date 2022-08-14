@@ -69,7 +69,7 @@ $clover: #a7c958;
 	display: block;
 	list-style: none;
 	animation: fall 15s linear infinite;
-	top: -10rem;
+	top: -4rem;
 }
 
 .cloverSquare {
@@ -232,6 +232,15 @@ $clover: #a7c958;
 	}
 }
 
+.blinkingCursor::after {
+	content: "|";
+	color: $clover;
+}
+
+.blinkingCursor.inactive::after {
+	content: "";
+}
+
 @keyframes fall {
 	0% {
 		transform: translateY(0) rotate(0deg);
@@ -245,19 +254,38 @@ $clover: #a7c958;
 }
 
 @keyframes blink-1 {
-	20% {
+	0%,
+	25% {
 		color: $clover;
+	}
+	26%,
+	100% {
+		color: white;
 	}
 }
 
 @keyframes blink-2 {
-	40% {
+	0%,
+	25% {
+		color: white;
+	}
+	26%,
+	50% {
 		color: $clover;
+	}
+	51%,
+	100% {
+		color: white;
 	}
 }
 
 @keyframes blink-3 {
-	60% {
+	0%,
+	50% {
+		color: white;
+	}
+	51%,
+	100% {
 		color: $clover;
 	}
 }
