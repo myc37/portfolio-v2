@@ -2,7 +2,6 @@ export enum SOCIAL {
 	GITHUB = "Github",
 	LINKEDIN = "Linkedin",
 	TELEGRAM = "Telegram",
-	RESUME = "Resume",
 }
 
 export enum SECTION {
@@ -48,4 +47,5 @@ export enum SIZE {
 export enum OTHER {
 	WEBSITE = "Website",
 	EMAIL = "Email",
+	MENU = "Menu",
 }
