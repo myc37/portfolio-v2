@@ -1,13 +1,19 @@
+@import "/styles/breakpoints";
+
 .container {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	row-gap: 4rem;
+	row-gap: 2rem;
 	min-height: calc(50vh + 1rem);
+
+	@include md {
+		row-gap: 4rem;
+	}
 }
 
 .contactContainer {
-	width: 100%;
+	margin: 0 auto 0 auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -17,16 +23,18 @@
 	span {
 		color: var(--light-color);
 		line-height: 2;
-		font-size: 1.25rem;
-		width: 100%;
+		text-align: center;
 	}
 }
 
 .socialContainer {
-	width: 30%;
 	display: flex;
 	flex-direction: column;
-	row-gap: 3rem;
+	row-gap: 2rem;
+
+	@include md {
+		row-gap: 3rem;
+	}
 }
 
 .social {
@@ -37,9 +45,14 @@
 		color: var(--light-color);
 		cursor: pointer;
 		transition: all 0.4s ease;
+		font-size: 1rem;
 
 		&:hover {
 			color: var(--secondary-color);
+		}
+
+		@include md {
+			font-size: inherit;
 		}
 	}
 }
