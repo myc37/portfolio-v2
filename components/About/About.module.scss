@@ -1,11 +1,16 @@
+@import "/styles/breakpoints";
+
 .container {
-	// min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	row-gap: 4rem;
+	row-gap: 2rem;
+
+	@include md {
+		row-gap: 4rem;
+	}
 }
 
 .content {
@@ -14,6 +19,5 @@
 	row-gap: 2rem;
 	color: var(--light-color);
 	line-height: 2;
-	font-size: 1.25rem;
 	text-align: justify;
 }

@@ -1,22 +1,13 @@
 import FadeIn from "components/FadeIn";
-import HoverableIcon from "components/HoverableIcon";
-import { SECTION, SIZE } from "constants/enums";
+import SectionHeader from "components/SectionHeader";
+import { SECTION } from "lib/enums";
 import aboutStyles from "./About.module.scss";
 
 const About = () => {
 	return (
 		<div className={aboutStyles.container}>
 			<FadeIn>
-				<span className="header">
-					<HoverableIcon
-						name={SECTION.ABOUT}
-						size={SIZE.LARGE}
-						active
-						hideLabel
-						disableFloat
-					/>
-					<h1>About Me</h1>
-				</span>
+				<SectionHeader section={SECTION.ABOUT} />
 				<div className={aboutStyles.content}>
 					<p>
 						I am currently a Year 3 Computer Science undergraduate
