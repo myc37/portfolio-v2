@@ -1,8 +1,8 @@
+// eslint-disable-next-line @next/next/no-img-element
 import FadeIn from "components/FadeIn";
 import HoverableIcon from "components/HoverableIcon";
 import SectionHeader from "components/SectionHeader";
-import { OTHER, SECTION, SIZE, SOCIAL, TECH } from "lib/enums";
-import Image from "next/image";
+import { OTHER, SECTION, SOCIAL, TECH } from "lib/enums";
 import { FC } from "react";
 import projectStyles from "./Projects.module.scss";
 
@@ -96,12 +96,7 @@ const ProjectCard: FC<Project & { mirror: boolean }> = ({
 				</span>
 			</span>
 			<div className={projectStyles.imageContainer}>
-				<Image
-					src={`/images/${name.toLowerCase()}.jpg`}
-					alt={name}
-					height={900}
-					width={1600}
-				/>
+				<img src={`/images/${name.toLowerCase()}.jpg`} alt={name} />
 				<div className={projectStyles.overlay}>
 					<GitHubButton />
 					<WebsiteButton />

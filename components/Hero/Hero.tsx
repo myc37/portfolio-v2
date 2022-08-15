@@ -1,5 +1,5 @@
 import FadeIn from "components/FadeIn";
-import React, { FC, RefObject, useCallback, useEffect, useState } from "react";
+import React, { FC, RefObject, useEffect, useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import heroStyles from "./Hero.module.scss";
 
