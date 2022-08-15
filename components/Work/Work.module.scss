@@ -1,3 +1,5 @@
+@import "/styles/breakpoints";
+
 .tabs > input[type="radio"] {
 	display: none;
 }
@@ -13,7 +15,11 @@
 .tabs > input[id="radio-1"] {
 	&:checked {
 		& ~ .glider {
-			transform: translateY(0);
+			transform: translateX(0);
+
+			@include lg {
+				transform: translateY(0);
+			}
 		}
 	}
 }
@@ -21,35 +27,55 @@
 .tabs > input[id="radio-2"] {
 	&:checked {
 		& ~ .glider {
-			transform: translateY(
-				100%
+			transform: translateX(
+				calc(100% + 12.5vw)
 			); // increase by 100% for each subsequent radio
+
+			@include lg {
+				transform: translateY((100%));
+			}
 		}
 	}
 }
 
 .container {
-	// min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	row-gap: 4rem;
+	row-gap: 2rem;
+	width: 100%;
+
+	@include lg {
+		row-gap: 4rem;
+	}
 }
 
 .workContainer {
-	display: flex;
-	column-gap: 4rem;
-	align-items: center;
-	justify-content: center;
 	position: relative;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	row-gap: 2rem;
+
+	@include lg {
+		flex-direction: row;
+		row-gap: 0;
+		column-gap: 4rem;
+	}
 }
 
 .tabs {
 	display: flex;
-	flex-direction: column;
 	position: relative;
+	column-gap: 12.5vw;
+	align-self: center;
 
 	* {
 		z-index: 2;
+	}
+
+	@include lg {
+		flex-direction: column;
+		align-self: start;
 	}
 }
 
@@ -57,51 +83,71 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 25vh;
-	width: 2rem;
-	font-size: 1.25rem;
 	font-weight: 500;
 	cursor: pointer;
-	transition: color 0.3s ease-in;
+	transition: color 0.4s ease-in;
+	width: 25vw;
 
 	&:hover {
 		color: var(--secondary-color);
+	}
+
+	@include lg {
+		height: 35vh;
+		width: 2rem;
+	}
+
+	@include xl {
+		height: 30vh;
+	}
+
+	@include xxl {
+		height: 20vh;
 	}
 }
 
 .tabs > label {
 	color: var(--light-color);
-	font-size: 1.5rem;
 }
 
 .glider {
 	position: absolute;
 	display: flex;
-	height: 25vh;
-	width: 0.25rem;
 	background-color: var(--secondary-color);
 	z-index: 1;
 	border-radius: 99px;
-	transition: 0.3s ease-out;
-	left: 5.5rem;
+	transition: 0.4s ease-out;
+	height: 0.25rem;
+	width: 25vw;
+	top: 100%;
+
+	@include lg {
+		height: 35vh;
+		width: 0.25rem;
+		top: 0;
+		left: 5.5rem;
+	}
+
+	@include xl {
+		height: 30vh;
+	}
+
+	@include xxl {
+		height: 20vh;
+	}
 }
 
 .content {
 	text-align: justify;
 	background: inherit;
 	color: var(--light-color);
-	height: 60vh;
-	width: 75%;
-	padding-left: 2rem;
-	font-size: 1.25rem;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	row-gap: 1rem;
 
 	ul {
 		list-style-type: none;
 		li {
-			font-size: 1.05rem;
 			font-weight: 300;
 			margin-bottom: 1rem;
 			display: flex;
@@ -114,22 +160,34 @@
 		}
 	}
 
-	h4 {
+	h3 {
 		color: var(--sub-color);
+		text-align: center;
+
+		@include lg {
+			text-align: left;
+		}
+	}
+
+	@include lg {
+		width: 75%;
+		padding-left: 2rem;
 	}
 }
 
 .header {
 	font-weight: 700;
-	font-size: 2rem;
 	display: flex;
-	column-gap: 1rem;
+	column-gap: 0.25rem;
+	justify-content: center;
 
-	h1:nth-of-type(2) {
+	h2:nth-of-type(2) {
 		color: var(--secondary-color);
 	}
-	h1 {
-		font-size: inherit;
+
+	@include lg {
+		column-gap: 0.5rem;
+		justify-content: start;
 	}
 }
 
@@ -137,21 +195,31 @@
 	display: flex;
 	flex-direction: column;
 	row-gap: 2rem;
+	margin-top: 2rem;
+
+	p {
+		font-size: 0.85rem;
+
+		@include md {
+			font-size: 1.05rem;
+		}
+	}
+
+	@include lg {
+		margin-top: 0;
+	}
 }
 
 .stack {
-	display: flex;
+	display: none;
 	column-gap: 2rem;
 	align-self: flex-end;
+
+	@include lg {
+		display: flex;
+	}
 }
 
 .award {
 	color: var(--secondary-color);
-	font-size: 1.5rem;
-}
-
-@media (max-width: 700px) {
-	.tabs {
-		transform: scale(0.6);
-	}
 }

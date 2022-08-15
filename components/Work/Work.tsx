@@ -1,28 +1,19 @@
 import { ChangeEventHandler, FC } from "react";
 import workStyles from "./Work.module.scss";
 import { useState } from "react";
-import { SECTION, SIZE, TECH } from "constants/enums";
+import { SECTION, TECH } from "lib/enums";
 import HoverableIcon from "components/HoverableIcon";
 import { FaAward } from "react-icons/fa";
-import { IconContext } from "react-icons";
 import FadeIn from "components/FadeIn";
+import SectionHeader from "components/SectionHeader";
 
-const Work: FC = () => {
+const Work = () => {
 	const [activeId, setActiveId] = useState(0);
 
 	return (
 		<div className={workStyles.container}>
 			<FadeIn>
-				<span className="header">
-					<HoverableIcon
-						name={SECTION.WORK}
-						size={SIZE.LARGE}
-						active
-						hideLabel
-						disableFloat
-					/>
-					<h1>Work Experiences</h1>
-				</span>
+				<SectionHeader section={SECTION.WORK} />
 				<div className={workStyles.workContainer}>
 					<div className={workStyles.tabs}>
 						{workExperiences.map((workExperience, index) => (
@@ -57,7 +48,7 @@ const WorkTab: FC<{
 			onChange={onChange}
 		/>
 		<label className={workStyles.tab} htmlFor={inputId}>
-			{company}
+			<h3>{company}</h3>
 		</label>
 	</>
 );
@@ -75,26 +66,20 @@ const WorkDescriptor: FC<WorkExperience> = ({
 		<div className={workStyles.content}>
 			<div>
 				<span className={workStyles.header}>
-					<h1>{role}</h1>
-					<h1> @ {company}</h1>
+					<h2>{role}</h2>
+					<h2> @ {company}</h2>
 				</span>
-				<h4>
+				<h3>
 					{start}
 					{end ? ` - ${end}` : ""}
-				</h4>
+				</h3>
 			</div>
 			<div className={workStyles.body}>
 				<p>{blurb}</p>
 				<ul>
 					{achievements.map((achievement, index) => (
 						<li key={index}>
-							<IconContext.Provider
-								value={{
-									className: `${workStyles.award}`,
-								}}
-							>
-								<FaAward />
-							</IconContext.Provider>
+							<FaAward className={workStyles.award} />
 							<p>{achievement}</p>
 						</li>
 					))}
@@ -122,7 +107,7 @@ type WorkExperience = {
 const workExperiences: WorkExperience[] = [
 	{
 		company: "Ethlas",
-		role: "Full Stack Developer",
+		role: "Full Stack Dev",
 		blurb: "Ethlas is an up-and-coming Web3 Game-Fi startup that aims to bridge the next billion users into the blockchain metaverse",
 		achievements: [
 			"Spearheaded the launch of major revenue generating features such as the Foundry and Marketplace",
@@ -141,12 +126,12 @@ const workExperiences: WorkExperience[] = [
 			TECH.TYPESCRIPT,
 			TECH.CSHARP,
 		],
-		start: "Feb 2022",
+		start: "Feb",
 		end: "Aug 2022",
 	},
 	{
 		company: "Skylab",
-		role: "Full Stack Developer",
+		role: "Full Stack Dev",
 		blurb: "Skylab is the web platform used for the Orbital program, which is NUS School of Computing's self-driven programming summer experience",
 		achievements: [
 			"Developed an MVP for the revised platform within just 3 months with a small team of 3 software engineers",
@@ -162,7 +147,7 @@ const workExperiences: WorkExperience[] = [
 			TECH.JIRA,
 			TECH.TYPESCRIPT,
 		],
-		start: "Mar 2022",
+		start: "Mar",
 		end: "Aug 2022",
 	},
 ];
