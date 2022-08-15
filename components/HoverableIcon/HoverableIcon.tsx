@@ -24,7 +24,6 @@ import {
 import {
 	FaGithub,
 	FaLinkedin,
-	FaFilePdf,
 	FaTelegramPlane,
 	FaQuestionCircle,
 } from "react-icons/fa";
@@ -39,7 +38,7 @@ import {
 } from "react-icons/md";
 import { FiExternalLink } from "react-icons/fi";
 import iconStyles from "./HoverableIcon.module.scss";
-import { OTHER, SECTION, SIZE, SOCIAL, TECH, THEME } from "constants/enums";
+import { OTHER, SECTION, SIZE, SOCIAL, TECH, THEME } from "lib/enums";
 
 type Props = {
 	name: SOCIAL | SECTION | TECH | THEME | OTHER;
@@ -132,8 +131,6 @@ const getIcon = (
 			return <FaGithub />;
 		case SOCIAL.LINKEDIN:
 			return <FaLinkedin />;
-		case SOCIAL.RESUME:
-			return <FaFilePdf />;
 		case SOCIAL.TELEGRAM:
 			return <FaTelegramPlane />;
 		case SECTION.HOME:
