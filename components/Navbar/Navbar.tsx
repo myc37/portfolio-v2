@@ -1,6 +1,8 @@
 import FadeIn from "components/FadeIn";
 import HoverableIcon from "components/HoverableIcon";
-import { SECTION, SIZE, SOCIAL } from "constants/enums";
+import { socialLinks } from "lib/constants";
+import { SECTION, SIZE, SOCIAL } from "lib/enums";
+import { handleScroll } from "lib/utils";
 import { FC, RefObject, useEffect, useState } from "react";
 import navStyles from "./Navbar.module.scss";
 
@@ -42,10 +44,6 @@ const Navbar: FC<Props> = ({ sectionRefs }) => {
 		};
 	}, [sectionRefs]);
 
-	const handleScroll = (ref: RefObject<HTMLDivElement>) => {
-		ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-	};
-
 	return (
 		<nav className={navStyles.container}>
 			<FadeIn direction="left">
@@ -79,13 +77,6 @@ const Navbar: FC<Props> = ({ sectionRefs }) => {
 
 const isInView = (section: HTMLDivElement) => {
 	return section.getBoundingClientRect().top <= window.innerHeight / 2;
-};
-
-const socialLinks: Record<SOCIAL, string> = {
-	Github: "https://github.com/myc37",
-	Linkedin: "https://www.linkedin.com/in/n-vijay-narayanan/",
-	Telegram: "https://t.me/myc37",
-	Resume: "/resumes/May_2022.pdf",
 };
 
 export default Navbar;
