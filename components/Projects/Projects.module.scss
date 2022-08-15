@@ -1,10 +1,17 @@
+@import "/styles/breakpoints";
+
 .container {
-	width: 100%;
 	display: flex;
+	width: 100%;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	row-gap: 4rem;
+	row-gap: 2rem;
+
+	@include md {
+		display: flex;
+		row-gap: 4rem;
+	}
 }
 
 .projectsContainer {
@@ -13,21 +20,33 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	row-gap: 10rem;
 	position: relative;
+	row-gap: 4rem;
+
+	@include lg {
+		row-gap: 10rem;
+	}
 }
 
 .card {
-	width: 60%;
+	width: 100%;
 	aspect-ratio: 16 / 9;
 	position: relative;
 	display: flex;
-	margin-right: 42.5%;
+	flex-direction: column;
+
+	@include lg {
+		width: 60%;
+		margin-right: 42.5%;
+		flex-direction: row;
+	}
 }
 
 .card.mirror {
-	margin-right: 0;
-	margin-left: 42.5%;
+	@include lg {
+		margin-right: 0;
+		margin-left: 42.5%;
+	}
 }
 
 .imageContainer {
@@ -59,7 +78,7 @@
 	left: 0;
 	right: 0;
 	z-index: 1;
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: center;
 	transition: all 0.4s ease;
@@ -76,48 +95,110 @@
 			transform: scale(1.03);
 		}
 	}
+
+	@include lg {
+		display: flex;
+	}
 }
 
 .descriptor {
-	position: absolute;
 	display: flex;
 	flex-direction: column;
 	row-gap: 1rem;
-	left: 95%;
-	top: 25%;
-	width: 75%;
-	z-index: 2;
+
+	@include lg {
+		position: absolute;
+		display: flex;
+		left: 95%;
+		top: 25%;
+		width: 75%;
+		z-index: 2;
+	}
 }
 
 .descriptor.mirror {
-	left: -70%;
+	@include lg {
+		left: -70%;
+	}
 }
 
 .header {
-	font-size: 2rem;
-	align-self: flex-end;
+	font-size: 1.25rem;
 	color: var(--light-color);
+	display: none;
+
+	@include lg {
+		font-size: 2rem;
+		align-self: flex-end;
+		display: block;
+	}
 }
 
 .stack {
-	display: flex;
+	display: none;
 	column-gap: 1.5rem;
 	align-self: flex-end;
+
+	@include lg {
+		display: flex;
+	}
 }
 
 .header.mirror,
 .stack.mirror {
-	align-self: flex-start;
+	@include lg {
+		align-self: flex-start;
+	}
 }
 
 .blurb {
-	background-color: rgba(107, 191, 89, 0.75);
+	background-color: var(--sub-color);
+	opacity: 0.9;
 	border-radius: 0.25rem;
-	padding: 1rem 2rem 1rem 2rem;
 	text-align: justify;
-	color: var(--primary-color);
-	max-height: calc((100vw - 6rem) * 0.75 * 0.6 * 9 / 16 * 0.6);
-	overflow-y: auto;
-	font-weight: 600;
-	font-size: 0.9rem;
+	padding: 1rem;
+	margin-top: -0.5rem;
+	z-index: 2;
+	color: var(--light-color);
+	font-weight: 300;
+	font-size: 1rem;
+
+	@include lg {
+		max-height: calc((100vw - 6rem) * 0.75 * 0.6 * 9 / 16 * 0.6);
+		overflow-y: auto;
+		margin-top: 0;
+		padding: 0.5rem 1.25rem 0.5rem 1.25rem;
+		font-size: 0.75rem;
+	}
+
+	@include xl {
+		padding: 1rem 2rem 1rem 2rem;
+		font-size: 1rem;
+	}
+}
+
+.mobileHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+
+	@include lg {
+		display: none;
+	}
+
+	> h1 {
+		color: var(--light-color);
+	}
+}
+
+.mobileCta {
+	display: flex;
+	column-gap: 2rem;
+
+	@include md {
+		* {
+			font-size: 2rem;
+		}
+	}
 }
