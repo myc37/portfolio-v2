@@ -11,17 +11,15 @@ const About = () => {
 				<div className={aboutStyles.content}>
 					<p>
 						I am currently a Year 3 Computer Science undergraduate
-						at the National University of Singapore. I intend to
-						pursue specializations in Software Engineering as well
-						as Database Systems, with aspirations of pursuing a
-						career as a Full Stack Developer.
+						at the National University of Singapore (NUS), with
+						specializations in Software Engineering as well as
+						Database Systems
 					</p>
 					<p>
-						It brings me great satisfaction and fulfilment to
-						engineer applications which help to solve society&apos;s
-						pain points and elevate peoples&apos; quality of life. I
-						look forward to any and all future opportunities to
-						develop my craft and enhance my problem solving skills.
+						My web development journey started with NUS School of
+						Computing&apos;s Orbital program back in May 2020. Since
+						then, I found a passion for building applications and
+						products that help to improve the lives of others
 					</p>
 				</div>
 			</FadeIn>

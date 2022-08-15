@@ -10,7 +10,7 @@ type Props = {
 const Hero: FC<Props> = ({ aboutRef }) => {
 	const [introBlurb, setIntroBlurb] = useState("");
 	const introBlurbText =
-		"Nice to meet you! My name is Vijay, and I aspire to make a positive impact on the world through web development";
+		"Nice to meet you! My name is Vijay, and I hope to make a positive impact on the world through building for the web";
 	const delay = 50;
 
 	useEffect(() => {
