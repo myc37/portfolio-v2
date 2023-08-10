@@ -15,7 +15,7 @@
 .tabs > input[id="radio-1"] {
 	&:checked {
 		& ~ .glider {
-			transform: translateX(0);
+			// transform: translateX(0);
 
 			@include lg {
 				transform: translateY(0);
@@ -27,12 +27,23 @@
 .tabs > input[id="radio-2"] {
 	&:checked {
 		& ~ .glider {
-			transform: translateX(
-				calc(100% + 12.5vw)
-			); // increase by 100% for each subsequent radio
+			// transform: translateX(calc(100% + 12.5vw));
 
 			@include lg {
 				transform: translateY((100%));
+			}
+		}
+	}
+}
+
+.tabs > input[id="radio-3"] {
+	&:checked {
+		& ~ .glider {
+			// transform: translateX(calc(100% + 12.5vw));
+
+			@include lg {
+				// increase by 100% for each subsequent radio
+				transform: translateY((200%));
 			}
 		}
 	}
@@ -93,16 +104,16 @@
 	}
 
 	@include lg {
-		height: 35vh;
+		height: 30vh;
 		width: 2rem;
 	}
 
 	@include xl {
-		height: 30vh;
+		height: 25vh;
 	}
 
 	@include xxl {
-		height: 20vh;
+		height: 15vh;
 	}
 }
 
@@ -122,18 +133,18 @@
 	top: 100%;
 
 	@include lg {
-		height: 35vh;
+		height: 30vh;
 		width: 0.25rem;
 		top: 0;
 		left: 5.5rem;
 	}
 
 	@include xl {
-		height: 30vh;
+		height: 25vh;
 	}
 
 	@include xxl {
-		height: 20vh;
+		height: 15vh;
 	}
 }
 

@@ -106,6 +106,19 @@ type WorkExperience = {
 
 const workExperiences: WorkExperience[] = [
 	{
+		company: "AXS",
+		role: "Frontend Dev",
+		blurb: "AXS Pte Ltd is a Singaporean SME that provides electronic payment services and solutions, specializing in offering a wide range of online payment options for various transactions such as bills, fines, and public services",
+		achievements: [
+			"Led frontend development for revamp of the AXS Selection website",
+			"Also entrusted to lead the development several new features for version releases of the AXS m-Station mobile app such as the Instarem Remittance calculator and AXS Selection landing page despite short tenure at AXS",
+			"Utilized vanilla PHP, HTML, CSS and JavaScript extensively, which helped tremendously with developing my fundamental web development skills",
+		],
+		stack: [TECH.JAVASCRIPT, TECH.HTML, TECH.CSS, TECH.PHP],
+		start: "May",
+		end: "July 2023",
+	},
+	{
 		company: "Ethlas",
 		role: "Full Stack Dev",
 		blurb: "Ethlas is an up-and-coming Web3 Game-Fi startup that aims to bridge the next billion users into the blockchain metaverse",
