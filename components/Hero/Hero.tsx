@@ -1,5 +1,5 @@
 import FadeIn from "components/FadeIn";
-import React, { FC, RefObject, useEffect, useState } from "react";
+import React, { FC, RefObject } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import heroStyles from "./Hero.module.scss";
 import { SIZE, SOCIAL } from "lib/enums";
@@ -13,8 +13,6 @@ type Props = {
 
 const Hero: FC<Props> = ({ aboutRef }) => {
 	const { isMobile } = useResponsive();
-	const introBlurb =
-		"Nice to meet you! My name is Vijay, and I hope to make a positive impact on the world through building for the web";
 
 	const handleScroll = () => {
 		aboutRef.current?.scrollIntoView({
@@ -54,21 +52,6 @@ const Hero: FC<Props> = ({ aboutRef }) => {
 							))}
 						</div>
 					</div>
-					{isMobile ? (
-						<div
-							className={heroStyles.arrowContainer}
-							onClick={handleScroll}
-						>
-							{Array.from(Array(3).keys()).map((num) => (
-								<FaChevronDown
-									key={num}
-									className={heroStyles.arrow}
-								/>
-							))}
-						</div>
-					) : (
-						<></>
-					)}
 				</FadeIn>
 			</div>
 			<ul className={heroStyles.dropContainer}>

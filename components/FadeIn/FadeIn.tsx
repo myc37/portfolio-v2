@@ -1,8 +1,8 @@
 import { FC, ReactNode } from "react";
-import { Fade, FadeDirection } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 
 type Props = {
-	direction?: FadeDirection;
+	direction?: "down" | "left" | "right" | "up";
 	delay?: number;
 	children: ReactNode;
 };

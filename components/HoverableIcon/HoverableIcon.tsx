@@ -2,7 +2,6 @@ import React, { FC, MouseEventHandler } from "react";
 import { IconContext } from "react-icons";
 import {
 	SiAlgolia,
-	SiC,
 	SiChakraui,
 	SiChartdotjs,
 	SiCsharp,
@@ -15,8 +14,8 @@ import {
 	SiHtml5,
 	SiJavascript,
 	SiJira,
-	SiMaterialui,
 	SiMongodb,
+	SiMui,
 	SiNextdotjs,
 	SiPhp,
 	SiPostgresql,
@@ -119,7 +118,7 @@ const getIcon = (
 		case TECH.JIRA:
 			return <SiJira />;
 		case TECH.MUI:
-			return <SiMaterialui />;
+			return <SiMui />;
 		case TECH.NEXTJS:
 			return <SiNextdotjs />;
 		case TECH.POSTGRESQL:
