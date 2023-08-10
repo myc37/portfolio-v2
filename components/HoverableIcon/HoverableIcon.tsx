@@ -2,18 +2,23 @@ import React, { FC, MouseEventHandler } from "react";
 import { IconContext } from "react-icons";
 import {
 	SiAlgolia,
+	SiC,
 	SiChakraui,
 	SiChartdotjs,
 	SiCsharp,
+	SiCss3,
 	SiCypress,
 	SiExpress,
 	SiFigma,
 	SiFirebase,
 	SiGooglecloud,
+	SiHtml5,
 	SiJavascript,
 	SiJira,
 	SiMaterialui,
+	SiMongodb,
 	SiNextdotjs,
+	SiPhp,
 	SiPostgresql,
 	SiPrisma,
 	SiReact,
@@ -26,6 +31,8 @@ import {
 	FaLinkedin,
 	FaTelegramPlane,
 	FaQuestionCircle,
+	FaMedal,
+	FaNewspaper,
 } from "react-icons/fa";
 import {
 	MdHome,
@@ -127,6 +134,14 @@ const getIcon = (
 			return <SiTypescript />;
 		case TECH.UNITY:
 			return <SiUnity />;
+		case TECH.HTML:
+			return <SiHtml5 />;
+		case TECH.CSS:
+			return <SiCss3 />;
+		case TECH.PHP:
+			return <SiPhp />;
+		case TECH.MONGODB:
+			return <SiMongodb />;
 		case SOCIAL.GITHUB:
 			return <FaGithub />;
 		case SOCIAL.LINKEDIN:
@@ -144,12 +159,16 @@ const getIcon = (
 			return <MdEmail />;
 		case SECTION.ABOUT:
 			return <MdPerson />;
+		case SECTION.HACKATHONS:
+			return <FaMedal />;
 		case THEME.DARK:
 			return <MdOutlineDarkMode />;
 		case THEME.LIGHT:
 			return <MdOutlineLightMode />;
 		case OTHER.WEBSITE:
 			return <FiExternalLink />;
+		case OTHER.NEWS:
+			return <FaNewspaper />;
 		default:
 			return <FaQuestionCircle />;
 	}

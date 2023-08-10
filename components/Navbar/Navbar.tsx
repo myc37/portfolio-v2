@@ -16,6 +16,7 @@ const Navbar: FC<Props> = ({ sectionRefs }) => {
 	useEffect(() => {
 		const homeSection = sectionRefs.Home.current;
 		const aboutSection = sectionRefs.About.current;
+		const hackathonSection = sectionRefs.Hackathons.current;
 		const workSection = sectionRefs.Work.current;
 		const projectsSection = sectionRefs.Projects.current;
 		const contactSection = sectionRefs.Contact.current;
@@ -23,6 +24,7 @@ const Navbar: FC<Props> = ({ sectionRefs }) => {
 		if (
 			!homeSection ||
 			!aboutSection ||
+			!hackathonSection ||
 			!workSection ||
 			!projectsSection ||
 			!contactSection
@@ -31,10 +33,12 @@ const Navbar: FC<Props> = ({ sectionRefs }) => {
 
 		window.onscroll = function () {
 			if (isInView(contactSection)) {
-				setActiveSectionId(4);
+				setActiveSectionId(5);
 			} else if (isInView(projectsSection)) {
-				setActiveSectionId(3);
+				setActiveSectionId(4);
 			} else if (isInView(workSection)) {
+				setActiveSectionId(3);
+			} else if (isInView(hackathonSection)) {
 				setActiveSectionId(2);
 			} else if (isInView(aboutSection)) {
 				setActiveSectionId(1);

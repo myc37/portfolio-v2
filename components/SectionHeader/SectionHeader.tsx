@@ -24,6 +24,7 @@ const SectionHeader: FC<Props> = ({ section }) => {
 const sectionTitles: Record<SECTION, string> = {
 	Home: "",
 	About: "About Me",
+	Hackathons: "Hackathons",
 	Work: "Work Experiences",
 	Projects: "Personal Projects",
 	Contact: "Get In Touch!",
