@@ -7,6 +7,7 @@ export enum SOCIAL {
 export enum SECTION {
 	HOME = "Home",
 	ABOUT = "About",
+	HACKATHONS = "Hackathons",
 	WORK = "Work",
 	PROJECTS = "Projects",
 	CONTACT = "Contact",
@@ -37,6 +38,10 @@ export enum TECH {
 	TAILWIND = "Tailwind",
 	TYPESCRIPT = "Typescript",
 	UNITY = "Unity",
+	HTML = "HTML",
+	CSS = "CSS",
+	PHP = "PHP",
+	MONGODB = "MongoDB",
 }
 
 export enum SIZE {
@@ -48,4 +53,5 @@ export enum OTHER {
 	WEBSITE = "Website",
 	EMAIL = "Email",
 	MENU = "Menu",
+	NEWS = "News",
 }
