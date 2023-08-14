@@ -114,7 +114,6 @@ const HackathonCard: FC<Hackathon & { mirror: boolean }> = ({
 					<div>
 						<p>by</p> <h4>{organizer}</h4>
 					</div>
-					ws
 				</div>
 				<div className={hackathonsStyles.mobileHeaderInfo}>
 					<h1>{award}</h1>
