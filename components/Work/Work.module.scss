@@ -121,6 +121,25 @@
 	color: var(--light-color);
 }
 
+.gliderTrack {
+	position: absolute;
+	display: flex;
+	background-color: var(--sub-color);
+	z-index: 1;
+	border-radius: 99px;
+	transition: 0.4s ease-out;
+	height: 0.25rem;
+	width: 100vw;
+	top: 100%;
+
+	@include lg {
+		height: 100%;
+		width: 0.25rem;
+		top: 0;
+		left: 5.5rem;
+	}
+}
+
 .glider {
 	position: absolute;
 	display: flex;
@@ -206,7 +225,6 @@
 	display: flex;
 	flex-direction: column;
 	row-gap: 2rem;
-	margin-top: 2rem;
 
 	p {
 		font-size: 0.85rem;
@@ -214,10 +232,6 @@
 		@include md {
 			font-size: 1.05rem;
 		}
-	}
-
-	@include lg {
-		margin-top: 0;
 	}
 }
 

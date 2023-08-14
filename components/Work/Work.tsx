@@ -25,6 +25,7 @@ const Work = () => {
 								onChange={() => setActiveId(index)}
 							/>
 						))}
+						<span className={workStyles.gliderTrack}></span>
 						<span className={workStyles.glider}></span>
 					</div>
 					<WorkDescriptor {...workExperiences[activeId]} />
