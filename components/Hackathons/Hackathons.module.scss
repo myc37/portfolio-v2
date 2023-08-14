@@ -7,11 +7,13 @@
 	justify-content: center;
 	align-items: center;
 	row-gap: 2rem;
-	padding-bottom: 10rem;
 
 	@include md {
-		display: flex;
 		row-gap: 4rem;
+	}
+
+	@include lg {
+		padding-bottom: 10rem;
 	}
 }
 
